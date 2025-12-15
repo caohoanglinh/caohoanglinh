@@ -44,3 +44,15 @@ DELETE 1234
 SET 1234 1234 59
 GET 1234 1234 59
 DELETE 1234
+SET, Key: 132, Data:  132, Version: 62
+SET, Key: 132, Data:  132, Version: 63
+GET, Key:  132, Data: 132, Version:  63
+GET, Key:  132, Data: 132, Version:  63
+DELETE, Key:  132
+SET, Key: 132, Data:  132, Version: 64
+GET, Key:  132, Data: 132, Version:  64
+DELETE, Key:  132
+SET, Key: 123, Data:  123, Version: 65
+SET, Key: 123, Data:  123, Version: 66
+GET, Key:  123, Data: 123, Version:  66
+GET, Key:  123, Data: 123, Version:  66

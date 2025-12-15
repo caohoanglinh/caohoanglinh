@@ -18,7 +18,7 @@ class BackupService(kvstore_pb2_grpc.KVStoreServicer):
             "version": request.data.version
         }
         with open(DATA_PATH, "a", encoding="utf-8") as f:
-                f.write(f"SET {request.key} {request.data.value} {request.data.version}\n")
+                f.write(f"SET, Key: {request.key}, Data:  {request.data.value}, Version: {request.data.version}\n")
         
         return kvstore_pb2.GrpcStatusResponse(
             success=True,
@@ -30,7 +30,7 @@ class BackupService(kvstore_pb2_grpc.KVStoreServicer):
             data = store[request.key]
 
             with open(DATA_PATH, "a", encoding="utf-8") as f:
-                f.write(f"GET {request.key} {data['value']} {data['version']}\n")
+                f.write(f"GET, Key: {request.key}, Data:  {data['value']}, Version:  {data['version']}\n")
             
             return kvstore_pb2.GrpcDataResponse(
                 success=True,
